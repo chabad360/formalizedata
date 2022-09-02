@@ -16,6 +16,9 @@
 				value = parseFloat(value);
 			}
 			return value;
+		},
+		text : function(value) {
+			return value;
 		}
 	};
 
@@ -77,7 +80,7 @@
 			*/
 
 			elementValue = $(this).val();
-			format = $(this).data("formalize");
+			format = $(this).data("type");
 			if (format && formalizeFormats[format] && typeof(formalizeFormats[format]) == "function") {
 				elementValue = formalizeFormats[format](elementValue);
 			}
